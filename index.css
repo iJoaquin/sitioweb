@@ -1,0 +1,404 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.offcanvas {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#barra_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    padding: 50px 0px;
+}
+
+#menu_hamburguesa {
+    display: none;
+}
+
+.navbar-brand {
+    color: rgba(255, 255, 255, 0.774);
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    margin: 10px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.774);
+    cursor: pointer;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.774);
+    gap: 10px;
+}
+
+.seccion_sub_intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_cv,
+.div_redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.div_cv button {
+    width: 100%;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.8s ease;
+}
+
+.div_cv button a {
+    color: white;
+    text-decoration: none;
+}
+
+.div_cv button:hover {
+    background-color: rgba(255, 165, 0, 0.8);
+}
+
+.fa-github,
+.fa-linkedin,
+.fa-whatsapp {
+    margin: 10px;
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.774);
+    cursor: pointer;
+}
+
+.fa-github:hover {
+    color: gray;
+}
+
+.fa-linkedin:hover {
+    color: #0077B5;
+}
+
+.fa-whatsapp:hover {
+    color: #25D366;
+}
+
+.div_imagen_intro {
+    width: 40%;
+    margin: auto;
+}
+
+.div_imagen_intro img {
+    object-fit: cover;
+    width: 100%;
+    animation: moverImagen 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #0ff, 0 0 14px #0ff, 0 0 16px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+@keyframes moverImagen {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.text_animado {
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 40ch;
+    animation: typing 2s steps(40), blink .5s infinite step-end alternate;
+    overflow: hidden;
+    width: 100%;
+    color: red;
+}
+
+@keyframes typing {
+    from { width: 0;}
+}
+
+@keyframes blink {
+    50% { border-color: transparent;}
+}
+
+#seccion_proyectos,
+#seccion_certificados,
+#seccion_sobremi {
+    display: none;
+}
+
+.proyectos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center();
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.div_proyecto {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.div_proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+figure {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+figure:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+figure figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+figure:hover figcaption {
+    opacity: 1;
+}
+
+figure figcaption p {
+    margin: 0 0 10px 0;
+}
+
+figure figcaption ul.lenguajes {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+figure:hover figcaption ul.lenguajes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figure figcaption ul.lenguajes i {
+    font-size: 1.5em;
+    margin: 0px 10px;
+    font-weight: normal;
+}
+
+.certificados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+}
+
+.certificados div {
+    width: 100%;
+    height: 100%;
+}
+
+.certificados div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.sobremi {
+    width: 80%;
+    margin: auto;
+}
+
+.div_sobremi {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.774);
+}
+
+.div_skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_skills .fa-html5,
+.div_skills .fa-css3-alt,
+.div_skills .fa-js,
+.div_skills .fa-bootstrap,
+.div_skills .fa-react,
+.div_skills .fa-laravel,
+.div_skills .fa-php,
+.div_skills .fa-python,
+.div_skills .fa-github {
+    font-size: 60px;
+    margin: 10px;
+}
+
+.fa-html5 {
+    color: #E34F26;
+}
+
+.fa-css3-alt {
+    color: #1572B6;
+}
+
+.fa-js {
+    color: #F7DF1E;
+}
+
+.fa-bootstrap {
+    color: #563D7C;
+}
+
+.fa-react {
+    color: #61DAFB;
+}
+
+.fa-laravel {
+    color: #F05133;
+}
+
+.fa-php {
+    color: #8993BE;
+}
+
+.fa-python {
+    color: #3776AB;
+}
+
+.div_skills .fa-github {
+    color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+    .div_texto_intro,
+    .proyectos,
+    .certificados,
+    .sobremi {
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #barra_header {
+        display: none;
+    }
+
+    #menu_hamburguesa {
+        display: block;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+
+    @keyframes moverImagen {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .seccion_sub_intro {
+        flex-direction: column;
+    }
+
+    .div_redes {
+        padding: 15px;
+    }
+
+    .proyectos,
+    .certificados {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .fa-github,
+    .fa-linkedin,
+    .fa-whatsapp {
+        font-size: 24px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .div_texto_intro,
+    .div_sobremi {
+        text-align: center;
+    }
+
+    .div_cv button {
+        width: 40%;
+        margin: auto;
+    }
+
+    .div_redes {
+        padding: 20px;
+    }
+}
